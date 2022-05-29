@@ -1,0 +1,287 @@
+$twentypx: 20px;
+@import "_px";
+@import "_colors";
+
+html {
+	height: 100%;
+}
+body {
+	background-color: $pagecolor;
+	height: 100%;
+}
+
+main {
+	height: 100%;
+}
+a:link,
+a:visited,
+a:active,
+a:hover {
+	text-decoration: none;
+}
+.panelcontainer img {
+	border-radius: 50%;
+	flex-direction: column;
+	align-self: center;
+	position: relative;
+	left: 135px;
+	top: 330px;
+}
+
+.panelcontainer {
+	width: 450px;
+	position: relative;
+	margin: 15px;
+}
+.panelcontainer .content1 {
+	border-radius: 20px 20px 0px 0px;
+	background-color: #fff;
+	padding: 20px;
+	font-size: 1.8em;
+	line-height: 1.2em;
+}
+.panelcontainer .content2 {
+	padding: 10px;
+	position: absolute;
+	display: inline;
+	background-color: #fff;
+	align-content: center;
+}
+.panelcontainer .content3 {
+	padding: 20px;
+	background-color: #686de0;
+	text-align: center;
+	color: #fff;
+	font-size: 26px;
+	border-radius: 0px 0px 20px 20px;
+}
+
+.container {
+	position: relative;
+	margin: auto;
+	max-width: 100vh;
+	display: grid;
+}
+
+.image {
+	position: block;
+	max-width: 250px;
+	height: auto;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	max-width: 250px;
+	opacity: 0;
+	transition: opacity 2000ms ease;
+	background-color: #494949;
+}
+.container:hover .overlay {
+	opacity: 1;
+}
+
+.content {
+	position: absolute;
+	top: 40%;
+	left: 0%;
+	width: 250px;
+	transform: translate (-50%, -50%);
+	transition: opacity 350ms ease;
+	text-align: center;
+}
+
+.content a {
+	width: 200px;
+	left: 0;
+	align-self: center;
+	text-align: center;
+	color: white;
+	border: solid 4px white;
+	padding: 10px;
+	text-decoration: none;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container:hover .content {
+	opacity: 1;
+}
+
+@media (min-width: 400px) {
+	.container {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(7, 14.28571428571429%);
+	}
+	.overlay {
+		max-width: 250px;
+	}
+}
+@media (min-width: 720px) {
+	.container {
+		display: grid;
+		grid-template-columns: repeat (2, 1fr);
+		grid-template-rows: repeat (4, 25%);
+	}
+	.wrapper {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.image {
+		max-width: 350px;
+	}
+	.overlay {
+		max-width: 350px;
+		max-height: fit-content;
+	}
+}
+@media (min-width: 1024px) {
+	.container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 33%);
+	}
+	.wrapper {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.image {
+		max-width: 450px;
+	}
+	.overlay {
+		max-width: 450px;
+	}
+}
+
+.socialmedia {
+	z-index: 100;
+	position: fixed;
+	bottom: 40px;
+	right: -150px;
+	cursor: pointer;
+}
+
+.blog::before {
+	font-family: "Font Awesome 5 Brands";
+	font-weight: 400;
+	font-size: 40px;
+	display: block;
+	width: 200px;
+	height: 50px;
+	content: "\f5fc";
+	color: white;
+	background-color: #e17b77;
+	padding: 0;
+	margin-right: 0;
+	transform: translateX(0px);
+	transition-duration: 1000ms;
+}
+
+.socialmedia .blog:hover::before {
+	content: "\f5fc"" " "check out my blog";
+	transform: translateX(-200px);
+	width: 200px;
+	font-size: 20px;
+	background-color: #e17b77;
+	overflow: visible;
+}
+
+.facebook::before {
+	font-family: "Font Awesome 5 Brands";
+	font-weight: 400;
+	font-size: 40px;
+	display: block;
+	width: 200px;
+	height: 50px;
+	content: "\f39e";
+	color: white;
+	background-color: #3b5998;
+	padding: 0;
+	margin-right: 0;
+	transform: width(50px);
+	transition-duration: 1000ms;
+}
+
+.socialmedia .facebook:hover::before {
+	content: "\f39e"" " "look at Facebook ";
+	transform: translateX(-200px);
+	width: 200px;
+	font-size: 20px;
+	background-color: #3b5998;
+}
+
+.twitter::before {
+	font-family: "Font Awesome 5 Brands";
+	font-weight: 400;
+	font-size: 40px;
+	display: block;
+	width: 200px;
+	height: 50px;
+	content: "\f099";
+	color: white;
+	background-color: #00aced;
+	padding: 0;
+	margin-right: 0;
+	transform: translateX(0px);
+	transition-duration: 1000ms;
+}
+
+.socialmedia .twitter:hover::before {
+	content: "\f099"" " "follow me on Twitter";
+	transform: translateX(-200px);
+	width: 200px;
+	font-size: 20px;
+	background-color: #00aced;
+}
+
+.github::before {
+	font-family: "Font Awesome 5 Brands";
+	font-weight: 400;
+	font-size: 40px;
+	display: block;
+	width: 200px;
+	height: 50px;
+	content: "\f09b";
+	color: white;
+	background-color: #333;
+	padding: 0;
+	margin-right: 0;
+	transform: translateX(0px);
+	transition-duration: 1000ms;
+}
+
+.socialmedia .github:hover::before {
+	content: "\f09b"" " "see projects on Github";
+	transform: translateX(-200px);
+	width: 200px;
+	font-size: 20px;
+	background-color: #333;
+}
+
+.linkedin::before {
+	font-family: "Font Awesome 5 Brands";
+	font-weight: 400;
+	font-size: 40px;
+	display: block;
+	width: 200px;
+	height: 50px;
+	content: "\f0e1";
+	color: white;
+	background-color: #007bb6;
+	padding: 0;
+	margin-right: 0;
+	transform: translateX(0px);
+	transition-duration: 1000ms;
+}
+
+.socialmedia .linkedin:hover::before {
+	content: "\f0e1"" " "connect on LinkedIn";
+	transform: translateX(-200px);
+	width: 200px;
+	font-size: 20px;
+	background-color: #007bb6;
+}
